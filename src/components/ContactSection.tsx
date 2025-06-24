@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Calendar, MessageCircle } from 'lucide-react';
 
@@ -15,109 +14,119 @@ const ContactSection = () => {
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
-    }));
-  };
+  const encode = (data: { [key: string]: string | boolean | number }) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    setShowSuccess(false);
-    setShowError(false);
-    setErrorMessage('');
 
     if (!formData.name || !formData.email || !formData.phone || !formData.interest || !formData.privacy) {
       setErrorMessage('Por favor, preencha todos os campos obrigatórios (*) e aceite a política de privacidade.');
       setShowError(true);
+      setShowSuccess(false);
       return;
     }
-
-    console.log('Dados do Formulário:', formData);
     
-    setShowSuccess(true);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      interest: '',
-      message: '',
-      privacy: false
-    });
-
-    setTimeout(() => {
-      setShowSuccess(false);
-    }, 6000);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contato-solo-energia", ...formData })
+    })
+      .then(() => {
+        setShowSuccess(true);
+        setShowError(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          interest: '',
+          message: '',
+          privacy: false
+        });
+        setTimeout(() => setShowSuccess(false), 6000);
+      })
+      .catch((error) => {
+        setShowError(true);
+        setShowSuccess(false);
+        setErrorMessage('Ocorreu um erro ao enviar o formulário. Tente novamente.');
+        console.error(error);
+      });
   };
 
   return (
-    <section id="contato" className="py-16 md:py-24 bg-solo-dark-gray text-white">
+    <section id="contato" className="py-16 md:py-24 bg-[#374151] text-white">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-          Pronto para Assumir o <span className="text-solo-yellow">Controle da Sua Energia com a Solo Energia?</span>
+          Pronto para Assumir o <span className="text-[#FFD700]">Controle da Sua Energia com a Solo Energia?</span>
         </h2>
         <p className="text-center text-gray-300 mb-12 md:mb-16 max-w-2xl mx-auto text-lg">
           Preencha o formulário ou entre em contato. Nossa equipe de especialistas em energia solar está pronta para criar sua solução energética ideal.
         </p>
         
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-          <div className="bg-white text-solo-black p-8 sm:p-10 rounded-xl shadow-2xl">
+          <div className="bg-white text-[#111827] p-8 sm:p-10 rounded-xl shadow-2xl">
             <h3 className="text-2xl font-semibold mb-6 text-center">Solicite uma Consultoria Gratuita em Energia Solar</h3>
             
-            <form onSubmit={handleSubmit}>
+            <form 
+              name="contato-solo-energia" 
+              onSubmit={handleSubmit}
+            >
+              {/* Campo oculto para Netlify identificar o formulário em sites SPA */}
+              <input type="hidden" name="form-name" value="contato-solo-energia" />
+
               <div className="mb-5">
-                <label htmlFor="name" className="block text-solo-dark-gray font-semibold mb-2">Nome Completo*</label>
+                <label htmlFor="name" className="block text-[#374151] font-semibold mb-2">Nome Completo*</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-solo-yellow focus:border-transparent outline-none transition-shadow"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD700] focus:border-transparent outline-none transition-shadow"
                   placeholder="Seu nome"
                   required
                 />
               </div>
               
               <div className="mb-5">
-                <label htmlFor="email" className="block text-solo-dark-gray font-semibold mb-2">E-mail*</label>
+                <label htmlFor="email" className="block text-[#374151] font-semibold mb-2">E-mail*</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-solo-yellow focus:border-transparent outline-none transition-shadow"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD700] focus:border-transparent outline-none transition-shadow"
                   placeholder="seuemail@exemplo.com"
                   required
                 />
               </div>
               
               <div className="mb-5">
-                <label htmlFor="phone" className="block text-solo-dark-gray font-semibold mb-2">Telefone/WhatsApp*</label>
+                <label htmlFor="phone" className="block text-[#374151] font-semibold mb-2">Telefone/WhatsApp*</label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-solo-yellow focus:border-transparent outline-none transition-shadow"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD700] focus:border-transparent outline-none transition-shadow"
                   placeholder="(XX) XXXXX-XXXX"
                   required
                 />
               </div>
               
               <div className="mb-6">
-                <label htmlFor="interest" className="block text-solo-dark-gray font-semibold mb-2">Principal Interesse em Nossas Soluções*</label>
+                <label htmlFor="interest" className="block text-[#374151] font-semibold mb-2">Principal Interesse em Nossas Soluções*</label>
                 <select
                   id="interest"
                   name="interest"
                   value={formData.interest}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-solo-yellow focus:border-transparent outline-none transition-shadow bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD700] focus:border-transparent outline-none transition-shadow bg-white"
                   required
                 >
                   <option value="" disabled>Selecione uma opção...</option>
@@ -132,14 +141,14 @@ const ContactSection = () => {
               </div>
               
               <div className="mb-5">
-                <label htmlFor="message" className="block text-solo-dark-gray font-semibold mb-2">Mensagem (Opcional)</label>
+                <label htmlFor="message" className="block text-[#374151] font-semibold mb-2">Mensagem (Opcional)</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={3}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-solo-yellow focus:border-transparent outline-none transition-shadow"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD700] focus:border-transparent outline-none transition-shadow"
                   placeholder="Conte-nos mais sobre seu projeto de energia..."
                 />
               </div>
@@ -152,11 +161,11 @@ const ContactSection = () => {
                     name="privacy"
                     checked={formData.privacy}
                     onChange={handleInputChange}
-                    className="rounded border-gray-300 text-solo-orange shadow-sm focus:border-solo-orange focus:ring focus:ring-solo-orange focus:ring-opacity-50"
+                    className="rounded border-gray-300 text-[#FF8C00] shadow-sm focus:border-[#FF8C00] focus:ring focus:ring-[#FF8C00] focus:ring-opacity-50"
                     required
                   />
-                  <span className="ml-2 text-sm text-solo-dark-gray">
-                    Li e concordo com a <a href="/politica-de-privacidade" target="_blank" className="text-solo-orange hover:underline">Política de Privacidade</a>.*
+                  <span className="ml-2 text-sm text-[#374151]">
+                    Li e concordo com a <a href="/politica-de-privacidade" target="_blank" className="text-[#FF8C00] hover:underline">Política de Privacidade</a>.*
                   </span>
                 </label>
               </div>
@@ -186,7 +195,7 @@ const ContactSection = () => {
           
           <div className="space-y-8 mt-12 md:mt-0">
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-solo-yellow">Fale com um Especialista Solo Energia Agora</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-[#FFD700]">Fale com um Especialista Solo Energia Agora</h3>
               <p className="text-gray-300 mb-4">Tire suas dúvidas ou inicie seu projeto de energia solar conversando diretamente com nossa equipe.</p>
               <a
                 href="https://wa.me/558581813110"
@@ -201,13 +210,13 @@ const ContactSection = () => {
             </div>
             
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-solo-yellow">Agende uma Consultoria Online de Energia Solar</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-[#FFD700]">Agende uma Consultoria Online de Energia Solar</h3>
               <p className="text-gray-300 mb-4">Prefere agendar? Escolha o melhor dia e horário para uma conversa detalhada sobre suas necessidades de energia.</p>
               <a
                 href="https://calendly.com/mateus-soloenergia/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-solo-orange text-white font-semibold py-4 px-8 rounded-lg text-lg shadow-lg hover:bg-opacity-80 transition duration-300 transform hover:scale-105 inline-flex items-center w-full sm:w-auto justify-center"
+                className="bg-[#FF8C00] text-white font-semibold py-4 px-8 rounded-lg text-lg shadow-lg hover:bg-opacity-80 transition duration-300 transform hover:scale-105 inline-flex items-center w-full sm:w-auto justify-center"
               >
                 <Calendar className="mr-3" size={20} />
                 Agendar Reunião Online
@@ -222,3 +231,21 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+```
+
+**2. Ação: Atualize seu código e envie para o GitHub.**
+
+* Abra o projeto no seu editor de código (como o VS Code).
+* Substitua todo o conteúdo do arquivo `src/components/ContactSection.tsx` pelo código que forneci acima.
+* Salve o arquivo.
+* Faça o `commit` e o `push` da alteração para o seu repositório no GitHub. Use os seguintes comandos no seu terminal:
+    ```bash
+    git add src/components/ContactSection.tsx
+    git commit -m "feat: Configure Netlify form"
+    git push
+    ```
+
+**O que vai acontecer?**
+Assim que você fizer o `push`, a Netlify irá detetar a mudança, iniciar um novo "build" automaticamente e publicar a nova versão do site.
+
+**Assim que o deploy terminar, me avise!** O próximo passo será testar o formulário e depois configurar seu domínio personaliza
