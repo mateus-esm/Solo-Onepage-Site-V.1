@@ -25,8 +25,8 @@ const Footer = () => {
               }}
             />
             <p className="text-sm mb-2">Solo Energia - Você no controle da sua energia.</p>
-            <p className="text-xs">CNPJ: XX.XXX.XXX/0001-XX</p>
-            <p className="text-xs">Endereço: Sua Rua, Nº 123, Sua Cidade - UF</p>
+            <p className="text-xs">CNPJ: 46.669.937/0001-55</p>
+            <p className="text-xs">Rua Dr. Ratisbona, 96 - Fátima, Fortaleza - CE, 60411-220</p>
           </div>
           
           <div>
@@ -93,7 +93,7 @@ const Footer = () => {
               Email: <a href="mailto:contato@soloenergia.com.br" className="hover:text-solo-yellow transition">contato@soloenergia.com.br</a>
             </p>
             <p className="text-sm">
-              Telefone: <a href="tel:+5500000000000" className="hover:text-solo-yellow transition">(XX) XXXXX-XXXX</a>
+              Telefone: <a href="tel:+558581813110" className="hover:text-solo-yellow transition">(85) 98181-3110</a>
             </p>
           </div>
         </div>

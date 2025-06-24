@@ -189,7 +189,7 @@ const ContactSection = () => {
               <h3 className="text-2xl font-semibold mb-4 text-solo-yellow">Fale com um Especialista Solo Energia Agora</h3>
               <p className="text-gray-300 mb-4">Tire suas dúvidas ou inicie seu projeto de energia solar conversando diretamente com nossa equipe.</p>
               <a
-                href="https://wa.me/55XXXXXXXXXXX"
+                href="https://wa.me/558581813110"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp font-semibold py-4 px-8 rounded-lg text-lg shadow-lg hover:opacity-90 transition duration-300 transform hover:scale-105 inline-flex items-center w-full sm:w-auto justify-center"
@@ -204,7 +204,7 @@ const ContactSection = () => {
               <h3 className="text-2xl font-semibold mb-4 text-solo-yellow">Agende uma Consultoria Online de Energia Solar</h3>
               <p className="text-gray-300 mb-4">Prefere agendar? Escolha o melhor dia e horário para uma conversa detalhada sobre suas necessidades de energia.</p>
               <a
-                href="https://calendly.com/seu-usuario/seu-evento"
+                href="https://calendly.com/mateus-soloenergia/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-solo-orange text-white font-semibold py-4 px-8 rounded-lg text-lg shadow-lg hover:bg-opacity-80 transition duration-300 transform hover:scale-105 inline-flex items-center w-full sm:w-auto justify-center"
