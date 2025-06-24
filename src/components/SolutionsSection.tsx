@@ -1,5 +1,5 @@
 
-import { Home, Building, ChartLine, ChargingStation, Cog, FileSignature } from 'lucide-react';
+import { Home, Building, ChartLine, Zap, Cog, FileSignature } from 'lucide-react';
 
 const SolutionsSection = () => {
   const solutions = [
@@ -22,7 +22,7 @@ const SolutionsSection = () => {
       buttonText: "Quero Investir em Energia Solar"
     },
     {
-      icon: ChargingStation,
+      icon: Zap,
       title: "Carregamento Veicular Elétrico",
       description: "Tecnologia de ponta para carregar seu veículo elétrico com rapidez e conveniência em casa ou na empresa.",
       buttonText: "Soluções para Carro Elétrico"
