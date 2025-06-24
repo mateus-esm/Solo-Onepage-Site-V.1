@@ -3,7 +3,7 @@ const CaseStudiesSection = () => {
   const cases = [
     {
       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-      title: "Residência Família Silva",
+      title: "Residência - Roberto",
       location: "São Paulo, SP",
       description: "Redução de 92% na conta de luz e valorização do imóvel. Atendimento impecável da Solo Energia!",
       result: "Economia e Sustentabilidade",
