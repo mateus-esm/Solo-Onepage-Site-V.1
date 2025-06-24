@@ -1,26 +1,27 @@
 const CaseStudiesSection = () => {
   const cases = [{
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-    title: "Residência Família Silva",
-    location: "São Paulo, SP",
+    title: "Residência - Roberto",
+    location: "Eusébio - CE",
     description: "Redução de 92% na conta de luz e valorização do imóvel. Atendimento impecável da Solo Energia!",
     result: "Economia e Sustentabilidade",
     fallback: "https://placehold.co/400x250/CCCCCC/FFFFFF?text=Projeto+Residencial&font=inter"
   }, {
     image: "https://images.unsplash.com/photo-1560439514-494f3036a092?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-    title: "Indústria Têxtil ABC",
-    location: "Campinas, SP",
+    title: "Usina - Alfram",
+    location: "Horizonte - CE",
     description: "Sistema solar robusto que supriu nossa demanda e reduziu significativamente os custos operacionais.",
     result: "Maior Competitividade",
     fallback: "https://placehold.co/400x250/CCCCCC/FFFFFF?text=Projeto+Comercial&font=inter"
   }, {
     image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80",
-    title: "Condomínio Vista Verde",
-    location: "Rio de Janeiro, RJ",
+    title: "Condomínio Aquiraz",
+    location: "Aquiraz - CE",
     description: "Solução de carregamento veicular moderna e eficiente para nossos moradores. Solo Energia foi a escolha certa.",
     result: "Mobilidade Sustentável",
     fallback: "https://placehold.co/400x250/CCCCCC/FFFFFF?text=Carregamento+EV&font=inter"
   }];
+  
   const scrollToContact = () => {
     const element = document.getElementById('contato');
     if (element) {
