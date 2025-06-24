@@ -78,6 +78,20 @@ const SolutionsSection = () => {
             );
           })}
         </div>
+
+        {/* Vídeo YouTube */}
+        <div className="mt-16 max-w-2xl mx-auto">
+          <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/izMCaGz8sgY"
+              title="Solo Energia - Vídeo Explicativo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
