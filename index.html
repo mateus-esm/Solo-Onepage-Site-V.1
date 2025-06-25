@@ -20,8 +20,25 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   </head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+ <body>
+  <form name="contato-solo-energia" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <select name="interest">
+      <option>Energia Solar Residencial</option>
+      <option>Energia Solar para meu Negócio</option>
+      <option>Carregamento para Veículo Elétrico</option>
+      <option>Investir em Usina Solar</option>
+      <option>Energia por Assinatura</option>
+      <option>O&M - Operação e Manutenção</option>
+      <option>Outro</option>
+    </select>
+    <textarea name="message"></textarea>
+    <input type="checkbox" name="privacy" />
+  </form>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+  
 </html>
