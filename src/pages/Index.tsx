@@ -8,6 +8,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import SimulatorSection from '@/components/SimulatorSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <SimulatorSection />
       <ContactSection />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

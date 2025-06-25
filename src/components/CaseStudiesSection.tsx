@@ -1,7 +1,6 @@
-
 const CaseStudiesSection = () => {
   const cases = [{
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1973&q=80",
+    image: "/lovable-uploads/bdf542bc-c34f-4446-9ac7-f82c95d56939.png",
     title: "Residência - Roberto",
     location: "Eusébio - CE",
     description: "Redução de 92% na conta de luz e valorização do imóvel. Atendimento impecável da Solo Energia!",
@@ -15,7 +14,7 @@ const CaseStudiesSection = () => {
     result: "Maior Competitividade",
     fallback: "https://placehold.co/400x250/CCCCCC/FFFFFF?text=Usina+Solar&font=inter"
   }, {
-    image: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+    image: "/lovable-uploads/6b3e7031-88a3-45e3-a7e1-098bc8c4e825.png",
     title: "Condomínio Aquiraz",
     location: "Aquiraz - CE",
     description: "Solução de carregamento veicular moderna e eficiente para nossos moradores. Solo Energia foi a escolha certa.",

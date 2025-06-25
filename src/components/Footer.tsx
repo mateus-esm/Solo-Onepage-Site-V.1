@@ -78,13 +78,13 @@ const Footer = () => {
               <a href="#" target="_blank" aria-label="Facebook da Solo Energia" className="text-xl hover:text-solo-yellow transition">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" target="_blank" aria-label="Instagram da Solo Energia" className="text-xl hover:text-solo-yellow transition">
+              <a href="https://www.instagram.com/soloenergiabr/" target="_blank" aria-label="Instagram da Solo Energia" className="text-xl hover:text-solo-yellow transition">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" target="_blank" aria-label="LinkedIn da Solo Energia" className="text-xl hover:text-solo-yellow transition">
+              <a href="https://www.linkedin.com/company/soloenergia/about/?viewAsMember=true" target="_blank" aria-label="LinkedIn da Solo Energia" className="text-xl hover:text-solo-yellow transition">
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="#" target="_blank" aria-label="YouTube da Solo Energia" className="text-xl hover:text-solo-yellow transition">
+              <a href="https://www.youtube.com/@soloenergiabr" target="_blank" aria-label="YouTube da Solo Energia" className="text-xl hover:text-solo-yellow transition">
                 <i className="fab fa-youtube"></i>
               </a>
             </div>

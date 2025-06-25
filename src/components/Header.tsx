@@ -1,7 +1,10 @@
+
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -11,12 +14,19 @@ const Header = () => {
     }
     setIsMobileMenuOpen(false);
   };
-  return <header className="w-full z-40 absolute top-0 left-0 right-0">
-      <div className="container sm:px-10 flex justify-between items-center max-w-7xl mx-0 py-[5px] px-[43px] rounded-none bg-gray-950">
+
+  return (
+    <header className="w-full z-40 absolute top-0 left-0 right-0">
+      <div className="w-full flex justify-between items-center py-[5px] px-[43px] bg-gray-950">
         <div>
-          <img alt="Solo Energia Logo - Energia Solar e Soluções Renováveis" className="h-12 md:h-16" onError={e => {
-          e.currentTarget.src = 'https://placehold.co/240x60/FFFFFF/111827?text=SOLO+ENERGIA&font=inter';
-        }} src="/lovable-uploads/f0d614fb-bed4-4067-815f-8ce4719a0790.png" />
+          <img 
+            alt="Solo Energia Logo - Energia Solar e Soluções Renováveis" 
+            className="h-12 md:h-16" 
+            onError={(e) => {
+              e.currentTarget.src = 'https://placehold.co/240x60/FFFFFF/111827?text=SOLO+ENERGIA&font=inter';
+            }} 
+            src="/lovable-uploads/f0d614fb-bed4-4067-815f-8ce4719a0790.png" 
+          />
         </div>
         
         <nav className="hidden md:flex space-x-5 lg:space-x-6 items-center">
@@ -44,7 +54,8 @@ const Header = () => {
         </div>
       </div>
 
-      {isMobileMenuOpen && <div className="md:hidden bg-solo-black bg-opacity-95 py-3 absolute top-full left-0 right-0 shadow-lg">
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-solo-black bg-opacity-95 py-3 absolute top-full left-0 right-0 shadow-lg">
           <button onClick={() => scrollToSection('jornada')} className="block w-full text-center py-2 text-white hover:bg-solo-dark-gray transition duration-300">
             Como Funciona a Energia Solar
           </button>
@@ -60,7 +71,10 @@ const Header = () => {
           <button onClick={() => scrollToSection('contato')} className="block w-full text-center py-3 text-solo-yellow font-semibold hover:opacity-90 transition duration-300">
             Fale Conosco
           </button>
-        </div>}
-    </header>;
+        </div>
+      )}
+    </header>
+  );
 };
+
 export default Header;
