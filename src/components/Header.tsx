@@ -12,7 +12,7 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
   return <header className="w-full z-40 absolute top-0 left-0 right-0">
-      <div className="container mx-auto px-6 sm:px-10 py-3 flex justify-between items-center max-w-7xl bg-slate-950">
+      <div className="container sm:px-10 flex justify-between items-center max-w-7xl mx-0 py-[5px] px-[43px] rounded-none bg-gray-950">
         <div>
           <img alt="Solo Energia Logo - Energia Solar e Soluções Renováveis" className="h-12 md:h-16" onError={e => {
           e.currentTarget.src = 'https://placehold.co/240x60/FFFFFF/111827?text=SOLO+ENERGIA&font=inter';
