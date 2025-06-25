@@ -14,9 +14,9 @@ const Header = () => {
   return <header className="w-full z-40 absolute top-0 left-0 right-0">
       <div className="container mx-auto px-6 sm:px-10 py-3 flex justify-between items-center max-w-7xl bg-slate-950">
         <div>
-          <img src="https://i.imgur.com/1l1YSvW.png" alt="Solo Energia Logo - Energia Solar e Soluções Renováveis" className="h-12 md:h-16" onError={e => {
+          <img alt="Solo Energia Logo - Energia Solar e Soluções Renováveis" className="h-12 md:h-16" onError={e => {
           e.currentTarget.src = 'https://placehold.co/240x60/FFFFFF/111827?text=SOLO+ENERGIA&font=inter';
-        }} />
+        }} src="/lovable-uploads/f0d614fb-bed4-4067-815f-8ce4719a0790.png" />
         </div>
         
         <nav className="hidden md:flex space-x-5 lg:space-x-6 items-center">
