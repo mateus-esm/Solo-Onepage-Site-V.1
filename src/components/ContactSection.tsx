@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Calendar, MessageCircle } from 'lucide-react';
 
@@ -19,6 +20,22 @@ const ContactSection = () => {
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
         .join("&");
   }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    if (type === 'checkbox') {
+      const checkbox = e.target as HTMLInputElement;
+      setFormData(prev => ({
+        ...prev,
+        [name]: checkbox.checked
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,7 +91,6 @@ const ContactSection = () => {
               name="contato-solo-energia" 
               onSubmit={handleSubmit}
             >
-              {/* Campo oculto para Netlify identificar o formulário em sites SPA */}
               <input type="hidden" name="form-name" value="contato-solo-energia" />
 
               <div className="mb-5">
@@ -231,21 +247,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-```
-
-**2. Ação: Atualize seu código e envie para o GitHub.**
-
-* Abra o projeto no seu editor de código (como o VS Code).
-* Substitua todo o conteúdo do arquivo `src/components/ContactSection.tsx` pelo código que forneci acima.
-* Salve o arquivo.
-* Faça o `commit` e o `push` da alteração para o seu repositório no GitHub. Use os seguintes comandos no seu terminal:
-    ```bash
-    git add src/components/ContactSection.tsx
-    git commit -m "feat: Configure Netlify form"
-    git push
-    ```
-
-**O que vai acontecer?**
-Assim que você fizer o `push`, a Netlify irá detetar a mudança, iniciar um novo "build" automaticamente e publicar a nova versão do site.
-
-**Assim que o deploy terminar, me avise!** O próximo passo será testar o formulário e depois configurar seu domínio personaliza
