@@ -75,9 +75,6 @@ const Footer = () => {
           <div>
             <h5 className="text-white font-semibold mb-3 text-lg">Siga a Solo Energia</h5>
             <div className="flex space-x-4 mb-4 justify-center md:justify-start">
-              <a href="#" target="_blank" aria-label="Facebook da Solo Energia" className="text-xl hover:text-solo-yellow transition">
-                <i className="fab fa-facebook-f"></i>
-              </a>
               <a href="https://www.instagram.com/soloenergiabr/" target="_blank" aria-label="Instagram da Solo Energia" className="text-xl hover:text-solo-yellow transition">
                 <i className="fab fa-instagram"></i>
               </a>
