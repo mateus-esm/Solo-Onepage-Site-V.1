@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
           <div>
             <img 
-              src="https://imgur.com/hMyWWoh" 
+              src="https://i.imgur.com/hMyWWoh.png" 
               alt="Solo Energia - Soluções Completas em Energia" 
               className="h-12 md:h-16 mb-4 mx-auto md:mx-0"
               onError={(e) => {
