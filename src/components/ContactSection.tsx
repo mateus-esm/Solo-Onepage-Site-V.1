@@ -37,7 +37,7 @@ const ContactSection = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.phone || !formData.interest || !formData.privacy) {
@@ -46,40 +46,7 @@ const ContactSection = () => {
       setShowSuccess(false);
       return;
     }
-
-    // --- CÓDIGO DE INTEGRAÇÃO COM MAKE.COM ---
-
-    // URL do seu Webhook (já preenchida)
-    const makeWebhookUrl = 'https://hook.us2.make.com/w2up5h3ffi4s8t5i85uabszvkthhvct0';
-
-    // Envio dos dados para o Make.com
-    fetch(makeWebhookUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-    .then(response => {
-      if (!response.ok) {
-        // Apenas loga um erro no console se a integração falhar, mas o formulário continua funcionando
-        console.error('Erro ao enviar dados para o CRM via Make.com');
-      }
-    })
-    .catch(error => {
-      console.error('Erro na requisição para o Make.com:', error);
-    });
     
-    // --- FIM DO CÓDIGO DE INTEGRAÇÃO ---
-
-
-    // Mantemos o envio original do formulário para o Netlify
-    const encode = (data: { [key: string]: string | boolean | number }) => {
-        return Object.keys(data)
-            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-            .join("&");
-    }
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -105,7 +72,6 @@ const ContactSection = () => {
         console.error(error);
       });
   };
-
   return (
     <section id="contato" className="py-16 md:py-24 bg-[#374151] text-white">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
