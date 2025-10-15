@@ -99,7 +99,6 @@ const Financiamento = () => {
           <div className="max-w-[1140px] mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-xl">
             <div className="rounded-lg overflow-hidden">
               <iframe src="https://meufinanciamentosolar.com.br/iframe?token=6bbbc5f8-e71d-4406-80a5-513bfde1bc03&origin=iframe" style="width:1140px;height:800px;border-style:none;"></iframe><div style="width:100%"><p style="text-align:center;color:#666666"> Powered by PV Operation e <a href="https://meufinanciamentosolar.com.br"target="_blank" rel="noopener" style="text-decoration:none;color:#666666">Meu Financiamento Solar</a></p></div>
-        </div>
       </section>
 
      
