@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import { Heart, Zap } from 'lucide-react';
 
 const Footer = () => {
@@ -63,6 +64,14 @@ const Footer = () => {
                 >
                   Simulador de Energia Solar
                 </button>
+              </li>
+              <li>
+                <Link 
+                  to="/financiamento"
+                  className="hover:text-solo-yellow transition"
+                >
+                  Financiamento Solar
+                </Link>
               </li>
               <li>
                 <a href="/politica-de-privacidade" target="_blank" className="hover:text-solo-yellow transition">

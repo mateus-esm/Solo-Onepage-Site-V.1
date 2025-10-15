@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 const SimulatorSection = () => {
   const scrollToContact = () => {
@@ -38,6 +39,18 @@ const SimulatorSection = () => {
             </button>
             {' '} para um projeto detalhado e personalizado.
           </p>
+          
+          <div className="text-center mt-6 pt-6 border-t border-gray-300">
+            <p className="text-solo-dark-gray mb-3">
+              Precisa de <span className="font-semibold">financiamento</span> para seu projeto solar?
+            </p>
+            <Link 
+              to="/financiamento"
+              className="text-solo-orange hover:underline font-semibold text-lg"
+            >
+              Veja as melhores opções de financiamento aqui →
+            </Link>
+          </div>
         </div>
       </div>
     </section>

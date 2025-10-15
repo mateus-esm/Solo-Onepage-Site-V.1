@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
@@ -42,6 +43,9 @@ const Header = () => {
           <button onClick={() => scrollToSection('solon')} className="nav-link py-2 font-semibold text-sm lg:text-base text-white">
             Simulador Solar
           </button>
+          <Link to="/financiamento" className="nav-link py-2 font-semibold text-sm lg:text-base text-white">
+            Financiamento Solar
+          </Link>
           <button onClick={() => scrollToSection('contato')} className="btn-primary-gradient py-2 px-5 lg:px-6 rounded-lg transition duration-300 transform hover:scale-105 text-sm lg:text-base">
             Fale Conosco
           </button>
@@ -68,6 +72,9 @@ const Header = () => {
           <button onClick={() => scrollToSection('solon')} className="block w-full text-center py-2 text-white hover:bg-solo-dark-gray transition duration-300">
             Simulador de Energia Solar
           </button>
+          <Link to="/financiamento" className="block w-full text-center py-2 text-white hover:bg-solo-dark-gray transition duration-300">
+            Financiamento Solar
+          </Link>
           <button onClick={() => scrollToSection('contato')} className="block w-full text-center py-3 text-solo-yellow font-semibold hover:opacity-90 transition duration-300">
             Fale Conosco
           </button>
