@@ -86,20 +86,45 @@ const Financiamento = () => {
         </div>
       </section>
 
-      {/* Seção da Calculadora */}
-      <section className="py-16 md:py-24 bg-solo-light-gray">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-solo-black">
-            <span className="text-solo-orange">Calcule Seu Financiamento</span> em Minutos
-          </h2>
-          <p className="text-center text-solo-dark-gray mb-12 max-w-2xl mx-auto text-lg">
-            Nossa ferramenta mostra as melhores opções de financiamento para seu projeto solar
-          </p>
-          
-          <div className="max-w-[1140px] mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-xl">
-            <div className="rounded-lg overflow-hidden">
-              <iframe src="https://meufinanciamentosolar.com.br/iframe?token=6bbbc5f8-e71d-4406-80a5-513bfde1bc03&origin=iframe" style="width:1140px;height:800px;border-style:none;"></iframe><div style="width:100%"><p style="text-align:center;color:#666666"> Powered by PV Operation e <a href="https://meufinanciamentosolar.com.br"target="_blank" rel="noopener" style="text-decoration:none;color:#666666">Meu Financiamento Solar</a></p></div>
-      </section>
+     {/* Seção da Calculadora */}
+<section className="py-16 md:py-24 bg-solo-light-gray">
+  <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-solo-black">
+      <span className="text-solo-orange">Calcule Seu Financiamento</span> em Minutos
+    </h2>
+    <p className="text-center text-solo-dark-gray mb-12 max-w-2xl mx-auto text-lg">
+      Nossa ferramenta mostra as melhores opções de financiamento para seu projeto solar
+    </p>
+
+    <div className="max-w-[1140px] mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-xl">
+      <div
+        className="rounded-lg overflow-hidden"
+        dangerouslySetInnerHTML={{
+          __html: `
+            <iframe
+              src="https://meufinanciamentosolar.com.br/iframe?token=6bbbc5f8-e71d-4406-80a5-513bfde1bc03&origin=iframe"
+              style="width:1140px;height:800px;border-style:none;"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <div style='width:100%'>
+              <p style='text-align:center;color:#666666'>
+                Powered by PV Operation e 
+                <a 
+                  href='https://meufinanciamentosolar.com.br'
+                  target='_blank'
+                  rel='noopener'
+                  style='text-decoration:none;color:#666666'>
+                  Meu Financiamento Solar
+                </a>
+              </p>
+            </div>
+          `,
+        }}
+      />
+    </div>
+  </div>
+</section>
 
      
 
