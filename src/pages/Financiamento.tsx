@@ -98,28 +98,11 @@ const Financiamento = () => {
           
           <div className="max-w-[1140px] mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-xl">
             <div className="rounded-lg overflow-hidden">
-              <iframe 
-                src="https://meufinanciamentosolar.com.br/iframe?token=6bbbc5f8-e71d-4406-80a5-513bfde1bc03&origin=iframe"
-                className="w-full border-0"
-                style={{ height: window.innerWidth < 768 ? '600px' : '800px', maxWidth: '100%' }}
-                title="Calculadora de Financiamento Solar - Solo Energia"
-                loading="lazy"
-              />
-            </div>
-            <p className="text-center text-solo-dark-gray mt-6 text-sm">
-              Powered by PV Operation e{' '}
-              <a 
-                href="https://meufinanciamentosolar.com.br" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-solo-orange hover:underline font-semibold"
-              >
-                Meu Financiamento Solar
-              </a>
-            </p>
-          </div>
+              <iframe src="https://meufinanciamentosolar.com.br/iframe?token=6bbbc5f8-e71d-4406-80a5-513bfde1bc03&origin=iframe" style="width:1140px;height:800px;border-style:none;"></iframe><div style="width:100%"><p style="text-align:center;color:#666666"> Powered by PV Operation e <a href="https://meufinanciamentosolar.com.br"target="_blank" rel="noopener" style="text-decoration:none;color:#666666">Meu Financiamento Solar</a></p></div>
         </div>
       </section>
+
+     
 
       {/* Seção de Benefícios */}
       <section className="py-16 md:py-24 bg-white">
