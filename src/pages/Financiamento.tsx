@@ -20,6 +20,9 @@ const Financiamento = () => {
     window.location.href = '/#contato';
   };
 
+  // URL extraída e limpa para evitar quebras de linha ou espaços ocultos
+  const iframeSrc = "https://meufinanciamentosolar.com.br/iframe?token=6bbbc5f8-e71d-4406-80a5-513bfde1bc03&origin=iframe";
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -47,30 +50,17 @@ const Financiamento = () => {
                 <span className="text-solo-orange">Invista no Futuro Sem Comprometer o Presente</span>
               </h2>
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="text-solo-yellow mt-1 flex-shrink-0" size={24} />
-                  <p className="text-solo-dark-gray text-lg">
-                    Parcelas que cabem no bolso, começando com economia imediata
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="text-solo-yellow mt-1 flex-shrink-0" size={24} />
-                  <p className="text-solo-dark-gray text-lg">
-                    Taxas competitivas e condições flexíveis
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="text-solo-yellow mt-1 flex-shrink-0" size={24} />
-                  <p className="text-solo-dark-gray text-lg">
-                    Aprovação rápida e processo simplificado
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="text-solo-yellow mt-1 flex-shrink-0" size={24} />
-                  <p className="text-solo-dark-gray text-lg">
-                    Valorização do seu imóvel desde o primeiro dia
-                  </p>
-                </div>
+                {[
+                  "Parcelas que cabem no bolso, começando com economia imediata",
+                  "Taxas competitivas e condições flexíveis",
+                  "Aprovação rápida e processo simplificado",
+                  "Valorização do seu imóvel desde o primeiro dia"
+                ].map((text, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle className="text-solo-yellow mt-1 flex-shrink-0" size={24} />
+                    <p className="text-solo-dark-gray text-lg">{text}</p>
+                  </div>
+                ))}
               </div>
             </div>
             
@@ -86,47 +76,47 @@ const Financiamento = () => {
         </div>
       </section>
 
-     {/* Seção da Calculadora */}
-<section className="py-16 md:py-24 bg-solo-light-gray">
-  <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-    <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-solo-black">
-      <span className="text-solo-orange">Calcule Seu Financiamento</span> em Minutos
-    </h2>
-    <p className="text-center text-solo-dark-gray mb-12 max-w-2xl mx-auto text-lg">
-      Nossa ferramenta mostra as melhores opções de financiamento para seu projeto solar
-    </p>
+     {/* Seção da Calculadora - CORRIGIDA */}
+      <section className="py-16 md:py-24 bg-solo-light-gray">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-solo-black">
+            <span className="text-solo-orange">Calcule Seu Financiamento</span> em Minutos
+          </h2>
+          <p className="text-center text-solo-dark-gray mb-12 max-w-2xl mx-auto text-lg">
+            Nossa ferramenta mostra as melhores opções de financiamento para seu projeto solar
+          </p>
 
-    <div className="max-w-[1140px] mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-xl">
-      <div
-        className="rounded-lg overflow-hidden"
-        dangerouslySetInnerHTML={{
-          __html: `
-            <iframe
-              src="https://meufinanciamentosolar.com.br/iframe?token=6bbbc5f8-e71d-4406-80a5-513bfde1bc03&origin=iframe"
-              style="width:1140px;height:800px;border-style:none;"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
-            <div style='width:100%'>
-              <p style='text-align:center;color:#666666'>
-                Powered by PV Operation e 
-                <a 
-                  href='https://meufinanciamentosolar.com.br'
-                  target='_blank'
-                  rel='noopener'
-                  style='text-decoration:none;color:#666666'>
-                  Meu Financiamento Solar
-                </a>
-              </p>
+          <div className="max-w-[1140px] mx-auto bg-white p-4 sm:p-8 rounded-xl shadow-xl">
+            <div className="w-full flex flex-col items-center">
+              {/* Iframe Implementado Corretamente no React */}
+              <iframe
+                src={iframeSrc}
+                title="Simulação Meu Financiamento Solar"
+                width="100%"
+                height="800"
+                style={{ border: 'none', maxWidth: '1140px' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade" // Importante para validação de origem
+              />
+              
+              <div className="w-full mt-4">
+                <p className="text-center text-gray-500 text-sm">
+                  Powered by PV Operation e{' '}
+                  <a 
+                    href="https://meufinanciamentosolar.com.br" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-solo-orange no-underline"
+                  >
+                    Meu Financiamento Solar
+                  </a>
+                </p>
+              </div>
             </div>
-          `,
-        }}
-      />
-    </div>
-  </div>
-</section>
-
-     
+          </div>
+        </div>
+      </section>
 
       {/* Seção de Benefícios */}
       <section className="py-16 md:py-24 bg-white">
